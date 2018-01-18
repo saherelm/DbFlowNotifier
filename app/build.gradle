@@ -1,0 +1,39 @@
+apply plugin: 'com.android.application'
+
+android {
+    buildToolsVersion '27.0.2'
+    compileSdkVersion 27
+
+    defaultConfig {
+        applicationId "ir.saherelm.testdbflow"
+        minSdkVersion 15
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:27.0.2'
+    implementation 'com.android.support:design:27.0.2'
+    implementation 'com.google.code.gson:gson:2.8.2'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.android.support:recyclerview-v7:27.0.2'
+
+    annotationProcessor 'com.github.Raizlabs.DBFlow:dbflow-processor:4.2.4'
+    implementation 'com.github.Raizlabs.DBFlow:dbflow-core:4.2.4'
+    implementation 'com.github.Raizlabs.DBFlow:dbflow:4.2.4'
+    implementation 'com.github.Raizlabs.DBFlow:dbflow-rx2:4.2.4'
+}
